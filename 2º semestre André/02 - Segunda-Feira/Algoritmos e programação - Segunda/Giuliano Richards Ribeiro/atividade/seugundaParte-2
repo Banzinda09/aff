@@ -1,0 +1,6 @@
+2. GitHub — ordem dos comandos Numere de 1 a 5 a ordem correta para inicializar um repositório Git local
+(3   ) git commit -m "primeiro commit" 
+(4   ) git remote add origin <link> 
+(5   ) git push -u origin main 
+(1   ) git init  (pra começar pra instlatar e winget install --id Git.Git -e --source winget)
+(2   ) git add . 

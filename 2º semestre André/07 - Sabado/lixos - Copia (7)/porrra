@@ -1,0 +1,157 @@
+## 1. Instalando o Git
+
+**Windows**
+- Via `winget` (recomendado, direto no terminal):
+  ```
+  winget install --id Git.Git -e --source winget
+  ```
+- Ou baixando o instalador em https://git-scm.com/download/win
+
+**Mac**
+- O Mac geralmente já vem com o Git, ou instala automaticamente ao digitar `git --version` pela primeira vez.
+- Se preferir instalar via **Homebrew**:
+  ```
+  brew install git
+
+  se n funcionar /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+
+**Confirmar instalação (os dois sistemas):**
+```
+git --version
+```
+Se aparecer algo como `git version 2.43.0`, deu certo.
+
+---
+
+## 2. Configurando seu nome e email (só precisa fazer uma vez)
+
+Funciona igual em Windows e Mac:
+
+```
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@exemplo.com"
+```
+
+> Use o mesmo email cadastrado na sua conta do GitHub, assim os commits ficam vinculados ao seu perfil.
+
+---
+
+## 3. Abrindo o terminal na pasta do projeto
+
+**Windows** (PowerShell, Git Bash ou terminal do VS Code)
+```
+cd caminho\da\sua\pasta
+```
+
+**Mac** (Terminal ou terminal do VS Code)
+```
+cd caminho/da/sua/pasta
+```
+
+> Dica: no VS Code, `Ctrl + '` (Windows) ou `Cmd + '` (Mac) abre o terminal integrado já na pasta do projeto aberto.
+
+---
+
+## 4. Inicializando o repositório local e enviando pela primeira vez
+
+Comandos idênticos em Windows e Mac:
+
+```
+git init
+git add .
+git commit -m "primeiro commit"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/seu-repositorio.git
+git push -u origin main
+```
+
+**O que cada linha faz:**
+| Comando | O que faz |
+|---|---|
+| `git init` | Cria o repositório Git na pasta atual |
+| `git add .` | Prepara todos os arquivos para o commit |
+| `git commit -m "..."` | Salva um "snapshot" dos arquivos preparados |
+| `git branch -M main` | Garante que a branch principal se chama `main` |
+| `git remote add origin <URL>` | Conecta o repositório local ao repositório no GitHub |
+| `git push -u origin main` | Envia os commits para o GitHub |
+
+Na primeira vez que você faz `push`, o GitHub pode abrir uma tela pedindo um **código de autorização** — esse código aparece no próprio terminal, não em outro app.
+
+---
+
+## 5. Enviando novas alterações (dia a dia)
+
+Depois que o repositório já está criado, o fluxo fica mais simples — você não precisa mais do `init`, `branch` nem `remote add`:
+
+```
+git add .
+git commit -m "descreva o que mudou"
+git push
+```
+
+---
+
+## 6. Removendo arquivos ou pastas
+
+**Apagar de vez (do computador E do GitHub):**
+```
+git rm -r nome_da_pasta
+git commit -m "remove nome_da_pasta"
+git push
+```
+
+**Manter no computador, só parar de enviar pro GitHub:**
+```
+git rm -r --cached nome_da_pasta
+git commit -m "remove nome_da_pasta do repositorio"
+git push
+```
+
+> Depois disso, vale criar um arquivo `.gitignore` e listar essas pastas nele, pra evitar que voltem a ser rastreadas sem querer.
+
+---
+
+## 7. Desfazendo uma remoção antes de commitar
+
+Se você rodou `git rm` (ou `git rm --cached`) mas ainda **não** fez o `commit`, dá pra voltar tudo atrás:
+
+```
+git restore --staged .
+git restore .
+```
+
+> Isso só funciona **antes** do commit. Depois de commitado e enviado (`push`), desfazer fica mais complicado.
+
+---
+
+## 8. Comandos úteis para checar o que está acontecendo
+
+```
+git status     # mostra o que mudou, o que está pronto pra commit, etc.
+git branch     # mostra em qual branch você está
+git log        # mostra o histórico de commits
+```
+
+---
+
+## 9. Deixando o repositório privado
+
+1. No site do GitHub, abra o repositório
+2. Vá em **Settings**
+3. Role até a seção vermelha **Danger Zone**
+4. Clique em **Change repository visibility** → **Make private**
+5. Confirme digitando o nome do repositório
+
+---
+
+## Diferenças entre Windows e Mac (resumo)
+
+| | Windows | Mac |
+|---|---|---|
+| Terminal | PowerShell / Git Bash / CMD | Terminal (app nativo) |
+| Instalar Git | `winget install --id Git.Git -e --source winget` | `brew install git` (ou já vem instalado) |
+| Navegar entre pastas | `cd caminho\pasta` (contrabarra) | `cd caminho/pasta` (barra) |
+| Listar arquivos da pasta | `dir` | `ls` |
+
+Os comandos do **Git em si** (`git init`, `git add`, `git commit`, `git push`, etc.) são **exatamente os mesmos** nos dois sistemas — a única diferença está em comandos do próprio terminal/sistema operacional, como navegar entre pastas ou listar arquivos.
