@@ -14,3 +14,16 @@ print(f'Idade: {idade} anos')
 print(f'Cidade: {cidade}')
 print(f'Gosta de programar: {like}')
 print('=====================')
+
+#confirmaçao
+#qual e o seu nome: a
+#qual e sua idade: 1
+#qual e sua cidade: a
+#voce gosta de programar: sim
+#===== CADASTRO ===== 
+#Nome: a
+#Idade: 1 anos
+#Cidade: a
+#Gosta de programar: True
+#=====================
+#(projeto_aula1) PS C:\Users\André Dornelas\OneDrive\Área de Trabalho\python codes> 
