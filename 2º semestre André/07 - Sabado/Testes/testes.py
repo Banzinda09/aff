@@ -1,0 +1,45 @@
+#                           formar hacker boladao
+
+# python --version 
+
+# python -m venv (nome que quiser)          no command prompt e so fazer essa parte
+
+# .\(nome do venv)\Scripts\Activate.ps1
+
+# ir no power shell e digitar o comando abaixo para ativar o ambiente virtual
+
+# Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+# apertar 'S' ou qualquer comando para confirmar
+
+# digitar o comando da linha 5 
+
+# pra ver se da certo vai aparecer o nome da pasta
+
+# para sair e so escrever deactivate no terminal (ctrl + ')
+
+# para ativar no cmd é só digitar o comando .\(nome do venv)\Scripts\activate.bat
+
+# para desativar no cmd é só digitar o comando deactivate
+
+#                            forma nutelinha
+
+#ctrl + shift + p 
+
+# pesquisar por python create environment
+
+# selecionar qual que vc quer e dps a vesao do python
+
+# se nao funcionar clicar no lado direito do sapo onde esta escrito (Python x.xx.x.xxxxx.x) com isso mostra qual que esta sendo usado
+
+# outra forma e clicando na setinha pra baixo no seu ternimal e selecionar o command prompt e escrver (where python) se aparecer
+    #o ambiente vitual em primeiro entao esta certo 
+
+# se continuar com problemas ta foda porem vc pode ir na setinha ir no command prompt e digitar 
+#cd .venv
+#cd Scripts
+#activate.bat
+
+# para sair e so escrever deactivate e para reativar e so escrever activate.bat
+
+#dicas pra ver os pip install so usar (pip freeze) e pra rodar o code pelo terminal e so digitar (python nome_do_arquivo.py)

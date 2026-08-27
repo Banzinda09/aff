@@ -1,0 +1,5 @@
+#o virtual e usado pra usar um (import) em um "mundo virtual" pois alguns import podem dar comflitos uns nos outros
+#entao pra fazer um vitual ou como se chama venv tem varias formas
+#1 facil- e apertando ctrl+shift+p e escrvendo (python create environment)
+#2 dificil- usando o command prompt no terminal e so escrever o codigo 
+#python -m venv (nome que quiser)
