@@ -1,0 +1,141 @@
+# Comandos Git — Bloco de Notas
+
+## 🌱 Iniciar um Repositório
+
+```bash
+# Iniciar um repositório Git na pasta atual
+git init
+
+# Ver o caminho da raiz do repositório (onde está o .git)
+git rev-parse --show-toplevel
+```
+
+---
+
+## 📍 Navegação (necessário antes de qualquer comando Git)
+
+```bash
+# Ver em qual pasta você está
+pwd
+
+# Entrar em uma pasta
+cd "caminho/da/pasta"
+```
+
+---
+
+## 📝 Ver o Estado dos Arquivos
+
+```bash
+# Ver o que mudou, o que é novo, o que está pronto pra commit
+git status
+```
+
+---
+
+## ➕ Adicionar Arquivos (Stage)
+
+```bash
+# Adicionar um arquivo específico
+git add nome_do_arquivo
+
+# Adicionar tudo que mudou/é novo
+git add .
+```
+
+---
+
+## 💾 Commit (Salvar no Histórico)
+
+```bash
+git commit -m "mensagem descrevendo a mudança"
+```
+
+---
+
+## ☁️ Enviar/Conectar com o GitHub
+
+```bash
+# Conectar pela primeira vez a um repositório remoto
+git remote add origin LINK_DO_REPOSITORIO
+
+# Enviar as mudanças
+git push
+
+# Primeiro push de uma branch nova
+git push -u origin main
+```
+
+---
+
+## 🌿 Branches
+
+```bash
+# Ver a branch atual e listar todas
+git branch
+
+# Criar uma branch nova
+git branch nome-da-branch
+
+# Criar e já mudar pra ela
+git checkout -b nome-da-branch
+
+# Trocar de branch
+git checkout nome-da-branch
+git switch nome-da-branch
+
+# Renomear a branch atual
+git branch -m novo_nome
+```
+
+---
+
+## ↩️ Desfazer / Remover do Rastreamento
+
+```bash
+# Tirar um arquivo do stage (sem apagar ele do computador)
+git restore --staged nome_do_arquivo
+
+# Alternativa em versões antigas do Git
+git reset HEAD nome_do_arquivo
+
+# Parar de rastrear um arquivo (mantém no computador)
+git rm --cached nome_do_arquivo
+
+# Parar de rastrear uma pasta inteira (mantém no computador)
+git rm -r --cached nome_da_pasta
+```
+
+⚠️ Só funciona em arquivos que **já foram rastreados** (já passaram por `add` + `commit`) alguma vez. Se o arquivo é novo e nunca foi adicionado, dá erro `pathspec did not match any files` — porque não tem nada pra remover.
+
+---
+
+## 🚫 .gitignore (não é comando, mas anda junto)
+
+```
+# Ignorar uma pasta inteira (em qualquer nível do projeto, se o .gitignore está na raiz)
+nome_da_pasta/
+
+# Ignorar um arquivo específico
+nome_do_arquivo.txt
+
+# Ignorar algo dentro de uma subpasta específica
+pasta_principal/subpasta/
+```
+
+**Regras:**
+- Cada item numa linha separada, sem indentação.
+- `.gitignore` na raiz do projeto → afeta o projeto inteiro.
+- `.gitignore` dentro de uma subpasta → afeta só aquela subpasta pra baixo (nunca as pastas acima).
+- Arquivo **já commitado antes**? Só colocar no `.gitignore` não basta — precisa de `git rm --cached` primeiro.
+
+---
+
+## 🔁 Fluxo Típico do Dia a Dia
+
+```bash
+git status              # ver o que mudou
+git add .                # adicionar tudo
+git commit -m "mensagem" # salvar no histórico
+git push                 # enviar pro GitHub
+```
